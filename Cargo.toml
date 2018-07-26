@@ -5,7 +5,7 @@ authors = ["cheme <emericchevalier.pro@gmail.com>"]
 
 
 [features]
-default = ["with-serde"]
+default = []
 with-serde = ["serde"]
 
 [dependencies]
