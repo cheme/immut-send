@@ -33,3 +33,22 @@ pub trait Ref<T>: SRef + Borrow<T> {
 }
 
 
+#[macro_export]
+macro_rules! sref_self(($ty:ident) => (
+
+  impl SRef for $ty {
+    type Send = $ty;
+    #[inline]
+    fn get_sendable(self) -> Self::Send {
+      self
+    }
+  }
+  impl SToRef<$ty> for $ty {
+    #[inline]
+    fn to_ref(self) -> $ty {
+      self
+    }
+  }
+
+));
+
