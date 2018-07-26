@@ -1,0 +1,13 @@
+[package]
+name = "immut-send"
+version = "0.0.1"
+authors = ["cheme <emericchevalier.pro@gmail.com>"]
+
+
+[features]
+default = ["with-serde"]
+with-serde = ["serde"]
+
+[dependencies]
+serde = { version = "~1.0.10", features = ["rc"], optional = true }
+
